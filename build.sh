@@ -116,6 +116,10 @@ case "$1" in
 	shift
     package "$@"
     ;;
+"package-beanstalk")
+	shift
+    package-beanstalk "$@"
+    ;;
 "bootrun")
 	shift
     bootrun "$@"
