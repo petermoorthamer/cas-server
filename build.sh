@@ -31,6 +31,10 @@ function package() {
 	copy
 }
 
+function package-beanstalk() {
+	./mvnw clean package -T 5 "$@"
+}
+
 function bootrun() {
 	./mvnw clean package spring-boot:run -T 5 "$@"
 }
@@ -111,6 +115,10 @@ case "$1" in
 "package")
 	shift
     package "$@"
+    ;;
+"package-beanstalk")
+	shift
+    package-beanstalk "$@"
     ;;
 "bootrun")
 	shift
